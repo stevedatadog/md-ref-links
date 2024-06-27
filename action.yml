@@ -1,0 +1,15 @@
+# action.yml
+name: 'Markdown Reference Link Action'
+description: 'Transforms reference links in markdown files to inline links'
+inputs:
+  content:
+    description: 'The body of text containing reference links'
+    required: true
+outputs:
+  result: 
+    description: 'The contents with reference links transformed to inline links'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.content }}
