@@ -10,6 +10,7 @@ inputs:
   destination-path:
     description: 'Path to write the transformed file'
     required: true
+
 outputs:
   result: 
     description: 'Number of links transformed'
@@ -19,4 +20,5 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.source-path }}
+    - -o
     - ${{ inputs.destination-path }}

@@ -8,18 +8,20 @@ See the raw Markdown for this file to see an example of a reference link.
 ## Example usage
 
 ```yaml
-name: Example workflow
+name: Process Markdown
 on: [push]
 jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-        - uses: actions/checkout@v2
-        - name: Transform reference links to inline links
-        uses: stevedatadog/md-ref-links@v1.0.0
-        with:
-            source-path: /workspace
-            destination-path: /workspace
+          - name: Checkout repository
+            uses: actions/checkout@v4
+
+          - name: Transform reference links to inline links 
+            uses: stevedatadog/md-ref-links@v1.0.0
+            with:
+              source-path: /courses/k8s-cluster-troubleshooting/labs/01-first-lab/assignment.md
+              destination-path: /courses/k8s-cluster-troubleshooting/labs/01-first-lab/assignment.md
 ```
 
 [ref-links-docs]: https://www.markdownguide.org/basic-syntax/#reference-style-links

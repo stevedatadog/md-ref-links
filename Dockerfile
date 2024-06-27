@@ -1,5 +1,5 @@
 FROM python:3-alpine
 
-COPY entrypoint.sh /entrypoint.sh
+COPY ref-links-to-inline.py /ref-links-to-inline.py
 
-ENTRYPOINT ["sh", "/entrypoint.sh"]
+ENTRYPOINT ["python3", "/ref-links-to-inline.py"]
